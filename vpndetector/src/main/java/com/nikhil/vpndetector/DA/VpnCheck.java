@@ -93,7 +93,7 @@ public final class VpnCheck {
         URL website=new URL(add);
         URLConnection connection=website.openConnection();
         connection.setConnectTimeout(vpn_TimeOut);
-        connection.setRequestProperty("User-Agent",UserAgent);
+        connection.setRequestProperty("User-Agent","Java-VPNDetection Library");
         BufferedReader in=null;
         InputStreamReader ir=null;
         try{
