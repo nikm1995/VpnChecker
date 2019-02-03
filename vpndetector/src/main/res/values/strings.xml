@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VpnDetector</string>
+    <string name="vpn_add_url">http://api.vpnblocker.net/v2/json/</string>
+</resources>
