@@ -58,7 +58,7 @@ public final class VpnCheck {
 
     public Response getResponse(String ip) throws IOException{
         String query_add=this.get_Query_add(ip);
-        String query_result=this.query(query_add,this.Vpn_TimeOut,"Java library");
+        String query_result=this.query(query_add,this.Vpn_TimeOut,"Java-VPNDetection Library");
         return new Gson().fromJson(query_result,Response.class);
     }
 
