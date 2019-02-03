@@ -1,5 +1,4 @@
 "# VpnChecker"
-
 How to
 To get a Git project into your build:
 
@@ -20,6 +19,12 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.nikm1995:VpnChecker:Tag'
+	        implementation 'com.github.nikm1995:VpnChecker:1.0.0'
 	}
+Share this release:
+
+Link
+That's it! The first time you request a project JitPack checks out the code, builds it and serves the build artifacts (jar, aar).
+
+If the project doesn't have any GitHub Releases you can use the short commit hash or 'master-SNAPSHOT' as the version.
 
