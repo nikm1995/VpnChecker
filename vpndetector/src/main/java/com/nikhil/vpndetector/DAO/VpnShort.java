@@ -17,8 +17,7 @@ public class VpnShort {
     public VpnShort(String ipToLookup) throws IOException {
         this.ipToLookup = ipToLookup;
         this.vpnCheck=new VpnCheck();
-        this.response=new Response();
-    }
+     }
 
     public VpnShort(String ipToLookup, VpnCheck vpnCheck) throws IOException {
         this.ipToLookup = ipToLookup;
