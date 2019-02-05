@@ -54,9 +54,12 @@ public class VpnShort {
         this.response = response;
     }
 
-    public void VpnorHosting() {
-
-
+    public boolean VpnorHosting() {
+        try {
+            response = vpnCheck.getResponse(ipToLookup);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -73,11 +76,11 @@ public class VpnShort {
                         if (response.Country != null) {
                             System.out.println("Country: " + response.Country.Name);
                         }
-                        checkhostip(response.hostip);
+
 
                     } else {
                         System.out.println("Error: " + response.Msg);
-                        checkhostip(response.hostip);
+                        ;
 
                     }
 
@@ -90,13 +93,10 @@ public class VpnShort {
 
 
 
-
+        return  response.hostip;
     }
 
-    private boolean checkhostip(boolean h) {
-        return h;
 
-    }
 
 
 }
