@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
 
 public final class VpnCheck {
     private String Vpn_Key;
@@ -58,7 +59,7 @@ public final class VpnCheck {
 
     public Response getResponse(String ip) throws IOException{
         String query_add=this.get_Query_add(ip);
-        String query_result=this.query(query_add,this.Vpn_TimeOut,"Java-VPNDetection Library");
+        String query_result=this.query(query_add,this.Vpn_TimeOut,"Mozilla-Firefox");
         return new Gson().fromJson(query_result,Response.class);
     }
 
@@ -93,11 +94,12 @@ public final class VpnCheck {
         URL website=new URL(add);
         URLConnection connection=website.openConnection();
         connection.setConnectTimeout(vpn_TimeOut);
-        connection.setRequestProperty("User-Agent","Java-VPNDetection Library");
+        connection.setRequestProperty("User-Agent",UserAgent);
         BufferedReader in=null;
         InputStreamReader ir=null;
         try{
-            ir=new InputStreamReader(connection.getInputStream());
+
+            ir=new InputStreamReader(connection.getInputStream(),Charset.forName("UTF-8"));
             in=new BufferedReader(ir);
             while((add=in.readLine())!=null){
                 response.append(add);

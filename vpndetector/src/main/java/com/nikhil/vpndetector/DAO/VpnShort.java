@@ -63,8 +63,8 @@ public class VpnShort {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    response = vpnCheck.getResponse(ipToLookup);
+
+                    //response = vpnCheck.getResponse(ipToLookup);
                     if (response.Status.equals("success")) {
                         System.out.println("Package: " + response.getPackage);
                         if (response.getPackage.equals("Free")) {
@@ -80,14 +80,11 @@ public class VpnShort {
 
                     } else {
                         System.out.println("Error: " + response.Msg);
-                        ;
 
                     }
 
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
             }
         }).start();
 
