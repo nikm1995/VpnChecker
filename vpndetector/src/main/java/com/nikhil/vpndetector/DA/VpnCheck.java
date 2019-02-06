@@ -2,12 +2,18 @@ package com.nikhil.vpndetector.DA;
 
 import com.google.gson.Gson;
 
+import org.xml.sax.SAXException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 public final class VpnCheck {
     private String Vpn_Key;
@@ -92,6 +98,17 @@ public final class VpnCheck {
     public String query(String add,int vpn_TimeOut,String UserAgent) throws IOException {
         StringBuilder response=new StringBuilder();
         URL website=new URL(add);
+        SAXParserFactory factory=SAXParserFactory.newInstance();
+        SAXParser parser=null;
+        try {
+             parser=factory.newSAXParser();
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+
         URLConnection connection=website.openConnection();
         connection.setConnectTimeout(vpn_TimeOut);
         connection.setRequestProperty("User-Agent",UserAgent);
