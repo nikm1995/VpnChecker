@@ -57,36 +57,30 @@ public class VpnShort {
     public boolean VpnorHosting() {
         try {
             response = vpnCheck.getResponse(ipToLookup);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
 
-                    //response = vpnCheck.getResponse(ipToLookup);
-                    if (response.Status.equals("success")) {
-                        System.out.println("Package: " + response.getPackage);
-                        if (response.getPackage.equals("Free")) {
-                            System.out.println("Remaining Requests: " + response.Remaining_Requests);
-                        }
-                        System.out.println("IP ADDRESS: " + response.IpAddress);
-                        System.out.println("Is this IP a VPN or HOSTING NETWORK ? " + response.hostip);
-                        System.out.println("Organisation: " + response.org);
-                        if (response.Country != null) {
-                            System.out.println("Country: " + response.Country.Name);
-                        }
+            //response = vpnCheck.getResponse(ipToLookup);
+            if (response.Status.equals("success")) {
+                System.out.println("Package: " + response.getPackage);
+                if (response.getPackage.equals("Free")) {
+                    System.out.println("Remaining Requests: " + response.Remaining_Requests);
+                }
+                System.out.println("IP ADDRESS: " + response.IpAddress);
+                System.out.println("Is this IP a VPN or HOSTING NETWORK ? " + response.hostip);
+                System.out.println("Organisation: " + response.org);
+                if (response.Country != null) {
+                    System.out.println("Country: " + response.Country.Name);
+                }
 
 
-                    } else {
-                        System.out.println("Error: " + response.Msg);
-
-                    }
-
-
+            } else {
+                System.out.println("Error: " + response.Msg);
 
             }
-        }).start();
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
 
 
 
