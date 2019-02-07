@@ -124,11 +124,11 @@ public class RequestData {
 
         if(save.equals("Proxy")){
             try{
-                if(sb1.toString().contains("Proxy")){
-                    objuser.put("Proxy",true);
-                }
-                else if(sb1.toString().contains("Clean")){
+                if(sb1.toString().contains("Clean")){
                     objuser.put("Proxy",false);
+                }
+                else if(sb1.toString().contains("Proxy")){
+                    objuser.put("Proxy",true);
                 }
 
 
