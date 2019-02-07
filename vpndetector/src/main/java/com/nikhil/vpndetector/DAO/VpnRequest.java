@@ -7,7 +7,7 @@ public class VpnRequest {
     public VpnRequest() {
     }
 
-    public ThreadVpn GetThreadProxy(){
+    public ThreadVpn GetThread(){
         ThreadVpn tv=new ThreadVpn();
         tv.start();
 
