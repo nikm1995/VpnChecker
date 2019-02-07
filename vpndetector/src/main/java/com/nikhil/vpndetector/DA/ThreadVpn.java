@@ -2,7 +2,7 @@ package com.nikhil.vpndetector.DA;
 
 
 public class ThreadVpn extends Thread {
-    Boolean proxy;
+    public Boolean proxy;
     private VpnDetector vpnDetector;
 
     @Override
